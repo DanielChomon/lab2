@@ -9,12 +9,12 @@ public interface JugadorRepository {
 
     List<Jugador> findByCompanyName(String name);
 
-    List<Shipper> findByCompanyNameOrPhone(String n, String p);
+    List<Jugador> findByCompanyNameOrPhone(String n, String p);
 
     @Query(nativeQuery = true,value = "select * from shippers where CompanyName = ?1")
-    List<Shipper> buscarPorNombre(String nombre);
+    List<Jugador> buscarPorNombre(String nombre);
 
     @Query(nativeQuery = true, value = "select * from shippers where CompanyName like %?1%")
-    List<Shipper> buscarParcialPorNombre(String nombre);
+    List<Jugador> buscarParcialPorNombre(String nombre);
 
 }
